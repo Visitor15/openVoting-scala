@@ -2,6 +2,7 @@ package com.forged.server
 
 import spray.http.MediaTypes._
 import spray.routing.HttpServiceActor
+import spray.httpx.PlayTwirlSupport._
 
 /**
  * Created by visitor15 on 11/15/15.
@@ -18,6 +19,13 @@ class RootActor extends HttpServiceActor {
               </body>
             </html>
           }
+        }
+      }
+    } ~
+    path("twirl") {
+      get {
+        complete {
+          com.forged.resources.html.index.render(new java.util.Date)
         }
       }
     }
