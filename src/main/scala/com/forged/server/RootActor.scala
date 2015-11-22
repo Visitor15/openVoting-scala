@@ -28,6 +28,13 @@ class RootActor extends HttpServiceActor {
           com.forged.resources.html.index.render(new java.util.Date)
         }
       }
+    } ~
+    path("recommend") {
+      get {
+        complete {
+          com.forged.resources.html.recommend.render()
+        }
+      }
     }
   }
 }

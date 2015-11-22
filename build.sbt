@@ -42,6 +42,8 @@ lazy val root = (project in file(".")).enablePlugins(SbtTwirl)
 
 sourceDirectories in (Compile, TwirlKeys.compileTemplates) := (unmanagedSourceDirectories in Compile).value
 
+TwirlKeys.templateImports += "java.util.UUID"
+
 //seq(Twirl.settings: _*)
 
 Revolver.settings
