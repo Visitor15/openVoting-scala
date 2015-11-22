@@ -8,8 +8,6 @@ scalaVersion := "2.11.7"
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
-
-
 libraryDependencies ++= {
   val akkaV       = "2.3.9"
   val sprayV      = "1.3.3"
@@ -28,22 +26,8 @@ libraryDependencies ++= {
   )
 }
 
-//lazy val root = (project in file(".")).enablePlugins(SbtTwirl)
-//
-//unmanagedResourceDirectories in Compile <++= baseDirectory { base =>
-//  Seq( base / "src/main/webapp" )
-//}
-
 lazy val root = (project in file(".")).enablePlugins(SbtTwirl)
 
-//unmanagedResourceDirectories in Compile <++= baseDirectory { base =>
-//  Seq(base / "src/main/templates")
-//}
-
-sourceDirectories in (Compile, TwirlKeys.compileTemplates) := (unmanagedSourceDirectories in Compile).value
-
 TwirlKeys.templateImports += "java.util.UUID"
-
-//seq(Twirl.settings: _*)
 
 Revolver.settings

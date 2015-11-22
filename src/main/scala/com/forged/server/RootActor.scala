@@ -25,14 +25,14 @@ class RootActor extends HttpServiceActor {
     path("twirl") {
       get {
         complete {
-          com.forged.resources.html.index.render(new java.util.Date)
+          html.index.render(new java.util.Date)
         }
       }
     } ~
     path("recommend") {
       get {
         complete {
-          com.forged.resources.html.recommend.render()
+          html.recommend.render()
         }
       }
     }
