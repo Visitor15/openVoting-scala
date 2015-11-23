@@ -35,6 +35,11 @@ class RootActor extends HttpServiceActor {
           html.recommend.render()
         }
       }
+    } ~
+    pathPrefix("theme") {
+      get {
+        getFromResourceDirectory("theme")
+      }
     }
   }
 }
