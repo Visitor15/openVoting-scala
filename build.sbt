@@ -30,6 +30,4 @@ lazy val root = (project in file(".")).enablePlugins(SbtTwirl)
 
 TwirlKeys.templateImports += "java.util.UUID"
 
-TwirlKeys.templateImports += "com.forged._"
-
 Revolver.settings
