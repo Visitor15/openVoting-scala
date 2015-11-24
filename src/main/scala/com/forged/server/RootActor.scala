@@ -36,6 +36,13 @@ class RootActor extends HttpServiceActor {
         }
       }
     } ~
+    path("form") {
+      get {
+        complete {
+          html.contactForm.render()
+        }
+      }
+    } ~
     pathPrefix("theme") {
       get {
         getFromResourceDirectory("theme")
